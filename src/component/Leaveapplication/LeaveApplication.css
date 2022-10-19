@@ -1,0 +1,36 @@
+.formcontainer{
+    margin-left: 20px;
+}
+
+.formele{
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    align-items: center;
+}
+
+.title::before{
+    content: "➤ ";
+}
+
+.formele1{
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.title1{
+    margin: 0px;
+}
+
+.title1::before{
+    content: "➤";
+}
+
+.btncontainer{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    padding: 10px;
+    width: 500px;
+}

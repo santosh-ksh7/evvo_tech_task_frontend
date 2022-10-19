@@ -1,0 +1,39 @@
+.appbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(102, 77, 243, 0.849);
+    color: white;
+    align-items: center;
+    padding: 5px;
+}
+
+.appbarheading{
+    flex: 3
+}
+
+.appbarmenu{
+    flex: 6
+}
+
+.navbarlinks{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.navbarlinks>p:hover{
+    text-decoration: underline 5px solid green;
+    transform: scale(1.1);
+}
+
+.navbarsinglelink{
+    display: flex;
+    justify-content: flex-end;
+    gap: 60px;
+    cursor: pointer;
+}
+
+.navbarsinglelink>p:hover{
+    text-decoration: underline 5px solid green;
+    transform: scale(1.1);
+}
