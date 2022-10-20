@@ -36,13 +36,28 @@ function EditLeaveApplication() {
                 <div>
                     {allleaves[0] ? 
                         <div className="appliedleaves">
-                        {allleaves.map((ele,index) => <DisplaySingleLeave obj={ele} key={index} setAllleaves={setAllleaves} />)}
+                            <table>
+                                <thead>
+                                    <tr style={{backgroundColor: "blue", color: "white"}}>
+                                        <th>Leave type</th>
+                                        <th>Start date</th>
+                                        <th>End date</th>
+                                        <th>Comments</th>
+                                        <th>Duation</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {allleaves.map((ele,index) => <DisplaySingleLeave obj={ele} key={index} setAllleaves={setAllleaves} />)}
+                                </tbody>
+                            </table>
                         </div> 
                         :
-                        "You have not applied for any leave application till now"
+                        <p style={{textAlign: "center", color: "red"}}>You have not applied for any leave application till now</p>
                     }
                 </div>
-            : "Loading your data....."}
+            : <p style={{textAlign: "center", color: "red"}}>Loading your data.....</p>}
         </div>
         <ToastContainer />
     </div>
@@ -67,31 +82,14 @@ function DisplaySingleLeave({obj, setAllleaves}){
     }
 
     return(
-        <div className="singleleave">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Leave type</th>
-                        <th>Start date</th>
-                        <th>End date</th>
-                        <th>Comments</th>
-                        <th>Duation</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{obj.leave_type}</td>
-                        <td>{obj.start_date}</td>
-                        <td>{obj.end_date}</td>
-                        <td>{obj.comment}</td>
-                        <td>{obj.duration}</td>
-                        <td><EditIcon onClick={()=> navigate(`/edit-a-application/${obj._id}`)} sx={{cursor: "pointer", color: "blue"}} /></td>
-                        <td><DeleteIcon onClick={()=> run(obj)} sx={{cursor: "pointer", color: "red"}} /></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <tr>
+                <td>{obj.leave_type}</td>
+                <td>{obj.start_date}</td>
+                <td>{obj.end_date}</td>
+                <td>{obj.comment}</td>
+                <td>{obj.duration}</td>
+                <td><EditIcon onClick={()=> navigate(`/edit-a-application/${obj._id}`)} sx={{cursor: "pointer", color: "blue"}} /></td>
+                <td><DeleteIcon onClick={()=> run(obj)} sx={{cursor: "pointer", color: "red"}} /></td>
+            </tr>
     )
 }

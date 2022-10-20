@@ -25,7 +25,7 @@ function Navbar() {
                 <div className="navbarlinks">
                     <p onClick={()=> navigate("/")}>Home</p>
                     <p onClick={()=> navigate("/apply-for-a-leave")}>Apply for leave</p>
-                    <p onClick={()=> navigate("/applied-leaves")}>Edit or delete yor applied leaves</p>
+                    <p onClick={()=> navigate("/applied-leaves")}>Edit or delete your applied leaves</p>
                     <p onClick={() => {
                         logout();
                         navigate("/forgot-pwd1")
